@@ -1,13 +1,13 @@
 package com.digitalinnovationone.personapi.controller;
 
 import com.digitalinnovationone.personapi.dto.MessageResponseDTO;
-import com.digitalinnovationone.personapi.repository.PersonRepository;
+import com.digitalinnovationone.personapi.request.PersonDTO;
 import com.digitalinnovationone.personapi.service.PersonService;
-import com.digitalinnovationone.personapi.tables.Person;
-import com.digitalinnovationone.personapi.tables.Phone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 //Indicando que todos os métodos dessa classe retornam um domain object
 //Um atalho para incluir @Controller e @ResponseBody
@@ -30,7 +30,7 @@ public class PersonController {
     @PostMapping
     //Para retornar o código 201, quando criar uma pessoa. Por definição, era 200.
     @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponseDTO createPerson(@RequestBody Person person){
-        return personService.createPerson(person);
+    public MessageResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO){
+        return personService.createPerson(personDTO);
     }
 }

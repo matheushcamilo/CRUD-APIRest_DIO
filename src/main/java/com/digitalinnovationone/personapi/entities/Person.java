@@ -1,4 +1,4 @@
-package com.digitalinnovationone.personapi.tables;
+package com.digitalinnovationone.personapi.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

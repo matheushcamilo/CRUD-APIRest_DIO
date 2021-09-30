@@ -1,8 +1,7 @@
-package com.digitalinnovationone.personapi.tables;
+package com.digitalinnovationone.personapi.entities;
 
 
 import com.digitalinnovationone.personapi.enums.PhoneType;
-import jdk.jfr.Enabled;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
