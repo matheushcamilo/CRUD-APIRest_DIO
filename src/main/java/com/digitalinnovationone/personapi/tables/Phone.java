@@ -19,7 +19,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Phone {
-    //PK gerada automaticamente, seguindo estratégia
+    //PK gerada automaticamente, seguindo estratégia de auto incremento unitário
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
