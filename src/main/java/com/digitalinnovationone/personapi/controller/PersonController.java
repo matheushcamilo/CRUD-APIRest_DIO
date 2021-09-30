@@ -1,6 +1,7 @@
 package com.digitalinnovationone.personapi.controller;
 
 import com.digitalinnovationone.personapi.dto.MessageResponseDTO;
+import com.digitalinnovationone.personapi.entities.Person;
 import com.digitalinnovationone.personapi.request.PersonDTO;
 import com.digitalinnovationone.personapi.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 //Indicando que todos os métodos dessa classe retornam um domain object
 //Um atalho para incluir @Controller e @ResponseBody
@@ -32,5 +34,11 @@ public class PersonController {
     @ResponseStatus(HttpStatus.CREATED)
     public MessageResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO){
         return personService.createPerson(personDTO);
+    }
+
+    //Retorna 200 por padrão
+    @GetMapping
+    public List<PersonDTO> listAll(){
+        return personService.listAll();
     }
 }
